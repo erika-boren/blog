@@ -19,7 +19,7 @@ gem 'uglifier', '>= 1.3.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 gem 'simple_form', '~> 3.2'
 gem 'bootstrap-sass', '~> 3.3'
-gem 'ckeditor', '~> 4.1'
+gem 'ckeditor'
 gem 'carrierwave'
 gem 'mini_magick'
 

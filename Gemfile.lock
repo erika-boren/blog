@@ -217,7 +217,7 @@ DEPENDENCIES
   byebug
   capybara (~> 2.13)
   carrierwave
-  ckeditor (~> 4.1)
+  ckeditor
   coffee-rails (~> 4.2)
   devise
   jbuilder (~> 2.5)
