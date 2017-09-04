@@ -3,7 +3,7 @@
   <div class="col-sm-1">
     <ul>
       <% @tags.each do |tag| %>
-      <li><%= link_to tag.name(@posts.tagged_posts(tag)) %></li>
+      <li><%= link_to tag.name, tag_path(tag.name) %></li>
       <% end %>
     </ul>
   </div>
