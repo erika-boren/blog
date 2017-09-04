@@ -5,6 +5,12 @@ class PostsController < ApplicationController
   # Index action to render all posts
   def index
     @posts = Post.all
+    @tags = Tag.all
+     if params[:tag]
+      @posts = Post.tagged_with(params[:tag])
+     else
+      @posts = Post.all
+     end
   end
 
   # New action for creating post
@@ -15,11 +21,8 @@ class PostsController < ApplicationController
   # Create action saves the post into database
   def create
     @post = Post.new(post_params)
-    #@tag = PostTag.new(tag_params)
 
     if @post.save
-      #@tags = @post.tags.create(tag_params)
-
       flash[:notice] = "Successfully created post!"
       redirect_to post_path(@post)
     else
