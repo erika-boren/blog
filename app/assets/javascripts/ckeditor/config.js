@@ -1,6 +1,7 @@
 CKEDITOR.editorConfig = function(config) {
   config.language = 'en';
   config.width = '700';
+  config.height = '1000'
   config.filebrowserBrowseUrl = "/ckeditor/attachment_files";
   config.filebrowserImageBrowseLinkUrl = "/ckeditor/pictures";
   config.filebrowserImageBrowseUrl = "/ckeditor/pictures";

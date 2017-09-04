@@ -2,4 +2,9 @@
   <h2 class="text-center"><%= @post.title %></h2>
   <h5 class="text-center"><%= @post.created_at.strftime('%b %d, %Y') %></h5>
   <div><%= raw @post.body %></div>
+  <div>
+    <% @tags.each do |tag|%>
+      <%= tag.name %>
+    <% end %>
+  </div>
 </div>

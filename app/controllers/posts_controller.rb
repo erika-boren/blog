@@ -15,7 +15,11 @@ class PostsController < ApplicationController
   # Create action saves the post into database
   def create
     @post = Post.new(post_params)
+    #@tag = PostTag.new(tag_params)
+
     if @post.save
+      #@tags = @post.tags.create(tag_params)
+
       flash[:notice] = "Successfully created post!"
       redirect_to post_path(@post)
     else
@@ -42,6 +46,7 @@ class PostsController < ApplicationController
 
   # The show action renders the individual post after retrieving the the id
   def show
+    @tags = Post.find(params[:id]).tags
   end
 
   # The destroy action removes the post permanently from the database
@@ -58,7 +63,7 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:title, :body)
+    params.require(:post).permit(:title, :body, :all_tags)
   end
 
   def find_post
