@@ -1,6 +1,5 @@
 
-  <h5>Search by tags:</h5>
-  <div class="col-sm-1">
+  <div class="col-sm-1 tag-list">
     <ul>
       <% @tags.each do |tag| %>
       <li><%= link_to tag.name, tag_path(tag.name) %></li>
