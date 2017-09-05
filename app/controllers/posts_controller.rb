@@ -2,23 +2,25 @@ class PostsController < ApplicationController
   before_action :find_post, only: [:edit, :update, :show, :delete]
   before_action :authenticate_user!, except: [:index, :show]
 
-  # Index action to render all posts
   def index
     @tags = Tag.all
 
-     if params[:tag]
+    if params[:tag]
       @posts = Post.tagged_with(params[:tag])
-     else
+    elsif params[:term]
+      @posts = Post.where('title ILIKE ? OR body ILIKE ?', "%#{params[:term]}%", "%#{params[:term]}%")
+      if @posts.empty?
+        flash.now[:notice] = "Your search didn't pull up any results. TRY AGAIN"
+      end
+    else
       @posts = Post.all
-     end
+    end
   end
 
-  # New action for creating post
   def new
     @post = Post.new
   end
 
-  # Create action saves the post into database
   def create
     @post = Post.new(post_params)
 
@@ -31,12 +33,10 @@ class PostsController < ApplicationController
     end
   end
 
-  # Edit action retrives the post and renders the edit page
   def edit
     @post = Post.find(params[:id])
   end
 
-  # Update action updates the post with the new information
   def update
     if @post.update_attributes(post_params)
       flash[:notice] = "Successfully updated post!"
@@ -47,12 +47,10 @@ class PostsController < ApplicationController
     end
   end
 
-  # The show action renders the individual post after retrieving the the id
   def show
     @tags = Post.find(params[:id]).tags
   end
 
-  # The destroy action removes the post permanently from the database
   def destroy
     @post = Post.find(params[:id])
     if @post.destroy
@@ -72,4 +70,5 @@ class PostsController < ApplicationController
   def find_post
     @post = Post.find(params[:id])
   end
+
 end
