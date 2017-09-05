@@ -8,6 +8,9 @@ class PostsController < ApplicationController
 
      if params[:tag]
       @posts = Post.tagged_with(params[:tag])
+     elsif params[:term]
+      #binding.pry
+        #@posts = Post.where('title ILIKE ?', "%#{params[:term]}%")
      else
       @posts = Post.all
      end
@@ -66,10 +69,12 @@ class PostsController < ApplicationController
   private
 
   def post_params
+    #binding.pry
     params.require(:post).permit(:title, :body, :all_tags)
   end
 
   def find_post
     @post = Post.find(params[:id])
   end
+
 end

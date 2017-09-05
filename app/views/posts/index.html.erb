@@ -7,6 +7,10 @@
         <% end %>
       </ul>
     </div>
+    <%= form_tag(posts_path, method: :get) do %>
+      <%= text_field_tag :term %>
+      <%= submit_tag 'Search' %>
+    <% end %>
   </div>
 
 <div class="container">
