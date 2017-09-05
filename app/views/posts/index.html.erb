@@ -7,13 +7,12 @@
         <% end %>
       </ul>
     </div>
-    <%= form_tag(posts_path, method: :get) do %>
-      <%= text_field_tag :term %>
-      <%= submit_tag 'Search' %>
-    <% end %>
   </div>
 
 <div class="container">
+   <% if flash.now[:notice] %>
+      <div class="notice"><%= flash[:notice] %></div>
+    <% end %>
   <div class="col-sm-10 col-xs-12">
     <% @posts.each do |post| %>
     <div class="col-xs-12 text-center">

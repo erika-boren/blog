@@ -9,8 +9,10 @@ class PostsController < ApplicationController
      if params[:tag]
       @posts = Post.tagged_with(params[:tag])
      elsif params[:term]
-      #binding.pry
-        #@posts = Post.where('title ILIKE ?', "%#{params[:term]}%")
+        @posts = Post.where('title ILIKE ? OR body ILIKE ?', "%#{params[:term]}%", "%#{params[:term]}%")
+          if @posts.empty?
+            flash.now[:notice] = "Your search didn't pull up any results. TRY AGAIN"
+          end
      else
       @posts = Post.all
      end
