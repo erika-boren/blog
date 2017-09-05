@@ -26,12 +26,21 @@
   color:black;
 }
 
-.tag-list {
-  background-color: #28eded;
+.tag-list ul{
+  /*background-color: #42dff4;;*/
   height:100%;
+  width:auto;
   margin:0 auto;
   display:block;
+  padding:5px;
+  font-family: 'lato';
+  font-weight:bold;
+  background-color:#F0F0F0;
   border-radius: 10%;
+}
+
+.tag-list a:hover{
+  color:#42dff4;
 }
 
 .profile-link{
@@ -45,7 +54,7 @@
 }
 
 .post-title-link a:hover{
-  color:blue;
+  color:#42dff4;
 }
 
 .post-container{
@@ -53,4 +62,17 @@
   border-style:groove;
   padding:10px;
   margin:10px;
+}
+#navbar-title{
+  font-family: 'Cabin Sketch';
+  font-size: 20px;
+  color:white;
+}
+
+#navbar-title:hover{
+  color:#42dff4;
+}
+
+#navbar-links li{
+ color:#42dff4;
 }
