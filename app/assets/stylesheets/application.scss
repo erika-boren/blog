@@ -19,4 +19,38 @@
 .tag-list li{
   list-style: none;
   padding:2px;
+
+}
+
+.tag-list li a{
+  color:black;
+}
+
+.tag-list {
+  background-color: #28eded;
+  height:100%;
+  margin:0 auto;
+  display:block;
+  border-radius: 10%;
+}
+
+.profile-link{
+  margin:0;
+  padding:0;
+  float:right;
+}
+
+.post-title-link a{
+  color:black;
+}
+
+.post-title-link a:hover{
+  color:blue;
+}
+
+.post-container{
+  /*border:1px groove gray;*/
+  border-style:groove;
+  padding:10px;
+  margin:10px;
 }
