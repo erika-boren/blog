@@ -5,4 +5,8 @@
     <div><%= raw @post.body %></div><br>
     <div><%=raw tag_links(@post.all_tags)%></div></br></br>
   </div>
+  <%= render 'disqus' %>
 </div>
+
+
+

@@ -22,6 +22,7 @@ gem 'bootstrap-sass', '~> 3.3'
 gem 'ckeditor'
 gem 'carrierwave'
 gem 'mini_magick'
+gem 'disqus_api'
 
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'

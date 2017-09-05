@@ -1,9 +1,9 @@
 
-  <div class="container col-sm-2 col-xs-2">
-    <div class="tag-list">
+  <div class="container col-sm-2 col-md-2 col-lg-2">
+    <div class="tag-list text-center">
       <ul>
         <% @tags.each do |tag| %>
-        <li><%= link_to tag.name, tag_path(tag.name) %></li>
+        <li class="text-center"><%= link_to tag.name, tag_path(tag.name) %></li>
         <% end %>
       </ul>
     </div>
