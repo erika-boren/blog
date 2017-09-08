@@ -10,7 +10,8 @@
   </div>
 
 <div class="container">
-  <div class="col-sm-10 col-xs-12">
+
+  <div class="col-sm-10 col-xs-12 posts-home">
     <% @posts.each do |post| %>
     <div class="col-xs-12 text-center">
       <div class="text-center post-title-link">
@@ -19,6 +20,7 @@
       </div>
       <div>
         <%= raw(post.body).truncate(200)%>
+
       </div>
       <% if user_signed_in? %>
         <%= link_to "Show", post_path(post), class: "btn btn-primary" %>
@@ -29,4 +31,5 @@
     </div>
     <% end %>
   </div>
+
 </div>

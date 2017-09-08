@@ -1,9 +1,9 @@
 <div class="container">
   <div class="col-sm-11 col-xs-12 blog-content">
-    <h2 class="text-center"><%= @post.title %></h2>
+    <h2 class="text-center post-title"><%= @post.title %></h2>
     <h5 class="text-center"><%= @post.created_at.strftime('%b %d, %Y') %></h5><br>
     <div><%= raw @post.body %></div><br>
-    <div><%=raw tag_links(@post.all_tags)%></div></br></br>
+    <div class="tag-link"><%=raw tag_links(@post.all_tags)%></div></br></br>
   </div>
   <%= render 'disqus' %>
 </div>
