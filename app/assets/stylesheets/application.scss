@@ -16,6 +16,14 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+body{
+  background-color:#F0F0F0;
+}
+
+.posts-home{
+  background-color:white;
+}
+
 .tag-list li{
   list-style: none;
   padding:2px;
@@ -23,11 +31,10 @@
 }
 
 .tag-list li a{
-  color:black;
+  color:#338CFF;
 }
 
 .tag-list ul{
-  /*background-color: #42dff4;;*/
   height:100%;
   width:auto;
   margin:0 auto;
@@ -35,12 +42,14 @@
   padding:5px;
   font-family: 'lato';
   font-weight:bold;
-  background-color:#F0F0F0;
-  border-radius: 10%;
 }
 
 .tag-list a:hover{
-  color:#42dff4;
+  /*color:#42dff4;*/
+}
+
+.tag-link a{
+  color:#338CFF;
 }
 
 .profile-link{
@@ -49,12 +58,21 @@
   float:right;
 }
 
+
 .post-title-link a{
-  color:black;
+  color:#338CFF;
 }
 
-.post-title-link a:hover{
-  color:#42dff4;
+.post-title{
+  color:#338CFF;
+}
+
+/*.post-title-link a:hover{
+  color:#338CFF;
+}*/
+
+.post-title-link h6{
+  font-weight: bold;
 }
 
 .post-container{
@@ -66,11 +84,12 @@
 #navbar-title{
   font-family: 'Cabin Sketch';
   font-size: 20px;
+  /*color:#15B097;*/
   color:white;
 }
 
 #navbar-title:hover{
-  color:#42dff4;
+  color:#338CFF;
 }
 
 #navbar-links a{
@@ -78,5 +97,5 @@
 }
 
 #navbar-links a:hover{
- color:#42dff4;
+ color:#338CFF;
 }
