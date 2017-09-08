@@ -15,6 +15,8 @@
  */
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "font-awesome-sprockets";
+@import "font-awesome";
 
 body{
   background-color:#F0F0F0;
@@ -76,7 +78,6 @@ body{
 }
 
 .post-container{
-  /*border:1px groove gray;*/
   border-style:groove;
   padding:10px;
   margin:10px;
@@ -84,7 +85,6 @@ body{
 #navbar-title{
   font-family: 'Cabin Sketch';
   font-size: 20px;
-  /*color:#15B097;*/
   color:white;
 }
 
@@ -98,4 +98,13 @@ body{
 
 #navbar-links a:hover{
  color:#338CFF;
+}
+
+.social{
+  padding:5px;
+}
+
+footer{
+  background-color: white;
+  /*font-family: 'lato';*/
 }
