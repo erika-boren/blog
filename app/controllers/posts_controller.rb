@@ -6,9 +6,10 @@ class PostsController < ApplicationController
     @tags = Tag.all
 
     if params[:tag]
-      @posts = Post.tagged_with(params[:tag])
+      # @posts = Post.tagged_with(params[:tag])
+      @posts = Post.tagged_with(params[:tag]).paginate(:page => params[:page])
     elsif params[:term]
-      @posts = Post.where('title ILIKE ? OR body ILIKE ?', "%#{params[:term]}%", "%#{params[:term]}%")
+      @posts = Post.where('title ILIKE ? OR body ILIKE ?', "%#{params[:term]}%", "%#{params[:term]}%").paginate(:page => params[:page]).order('id DESC')
       if @posts.empty?
         flash.now[:notice] = "Your search didn't pull up any results. TRY AGAIN"
       end
