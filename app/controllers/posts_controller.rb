@@ -13,7 +13,8 @@ class PostsController < ApplicationController
         flash.now[:notice] = "Your search didn't pull up any results. TRY AGAIN"
       end
     else
-      @posts = Post.all
+      #@posts = Post.all
+      @posts = Post.paginate(:page => params[:page], :per_page => 5)
     end
   end
 
