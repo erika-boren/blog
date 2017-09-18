@@ -3,7 +3,6 @@
     <div class="tag-list text-center">
       <ul>
         <% @tags.each do |tag| %>
-
         <li class="text-center"><%= link_to tag.name, tag_path(tag.name) %></li>
         <% end %>
       </ul>

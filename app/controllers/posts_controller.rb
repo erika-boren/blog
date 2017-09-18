@@ -5,9 +5,6 @@ class PostsController < ApplicationController
   def index
     @tags = Tag.order(id: :asc).limit(10).each
 
-    # @tags = Tag.all
-    #binding.pry
-
     if params[:tag]
       @posts = Post.tagged_with(params[:tag]).paginate(:page => params[:page])
     elsif params[:term]
