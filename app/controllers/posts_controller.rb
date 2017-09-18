@@ -3,17 +3,17 @@ class PostsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
 
   def index
-    @tags = Tag.all
+    @tags = Tag.order(id: :asc).limit(10).each
 
     if params[:tag]
-      @posts = Post.tagged_with(params[:tag])
+      @posts = Post.tagged_with(params[:tag]).paginate(:page => params[:page])
     elsif params[:term]
-      @posts = Post.where('title ILIKE ? OR body ILIKE ?', "%#{params[:term]}%", "%#{params[:term]}%")
+      @posts = Post.where('title ILIKE ? OR body ILIKE ?', "%#{params[:term]}%", "%#{params[:term]}%").paginate(:page => params[:page]).order('id DESC')
       if @posts.empty?
         flash.now[:notice] = "Your search didn't pull up any results. TRY AGAIN"
       end
     else
-      @posts = Post.all
+      @posts = Post.paginate(:page => params[:page], :per_page => 5)
     end
   end
 
