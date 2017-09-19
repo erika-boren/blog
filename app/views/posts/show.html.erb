@@ -8,5 +8,18 @@
   <%= render 'disqus' %>
 </div>
 
+<script>
+    var config = {
+      extraPlugins: 'codesnippet',
+      codeSnippet_theme: 'monokai_sublime',
+      height: 356
+    };
+    config.codeSnippet_languages = {
+    javascript: 'JavaScript',
+    php: 'PHP'
+};
+
+    CKEDITOR.replace( 'editor1', config );
+  </script>
 
 

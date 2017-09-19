@@ -14,5 +14,8 @@
 //= require rails-ujs
 //= require bootstrap-sprockets
 //= require ckeditor/init
+//= require highlight_js/highlight
+//= require highlight_js/languages/ruby
 //= require turbolinks
 //= require_tree .
+hljs.initHighlightingOnLoad();

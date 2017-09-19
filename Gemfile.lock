@@ -99,6 +99,8 @@ GEM
       sass (>= 3.2)
     globalid (0.4.0)
       activesupport (>= 4.2.0)
+    highlight_js-rails (7.1.0)
+      rails (>= 3.1.1)
     i18n (0.8.6)
     jbuilder (2.7.0)
       activesupport (>= 4.2.0)
@@ -238,6 +240,7 @@ DEPENDENCIES
   devise
   disqus_api
   font-awesome-sass
+  highlight_js-rails
   jbuilder (~> 2.5)
   jquery-rails
   listen (>= 3.0.5, < 3.2)
