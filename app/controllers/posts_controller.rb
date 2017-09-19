@@ -8,12 +8,12 @@ class PostsController < ApplicationController
     if params[:tag]
       @posts = Post.tagged_with(params[:tag]).paginate(:page => params[:page])
     elsif params[:term]
-      @posts = Post.where('title ILIKE ? OR body ILIKE ?', "%#{params[:term]}%", "%#{params[:term]}%").paginate(:page => params[:page]).order('id DESC')
+      @posts = Post.where('title ILIKE ? OR body ILIKE ?', "%#{params[:term]}%", "%#{params[:term]}%").paginate(:page => params[:page]).order('created_at desc')
       if @posts.empty?
         flash.now[:notice] = "Your search didn't pull up any results. TRY AGAIN"
       end
     else
-      @posts = Post.paginate(:page => params[:page], :per_page => 5).order("created_at desc")
+      @posts = Post.paginate(:page => params[:page]).order('created_at desc')
     end
   end
 
